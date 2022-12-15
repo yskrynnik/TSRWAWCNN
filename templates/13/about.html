@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block content %}
+    <div class="row justify-content-center py-3">
+        <div class="col-lg-6">
+            <p class="fs-2">What is 13-layer CNN</p>
+            <p class="">&emsp;&emsp; This is a convolutional neural network which was developed in 2021 year as a proposal for resolving Traffic Sign Recognition problem.
+            </p>
+             Neural network has the following properties:
+            <ul>
+                <li>13 layers</li>
+                <li>1,761,099 total params</li>
+                <li>1,759,755 trainable params</li>
+                <li>1,344 non-trainable params</li>
+                <li>Activation functions used: relu, softmax</li>
+                <li>The proportion of correct answers on the test data - 98.33</li>
+            </ul>
+            <p class="fs-2">Visualized model</p>
+            <img class="img-fluid mx-auto d-block" src="{{ url_for('static', filename = "img/13_visualized_model.png") }}">
+             <p class="fs-2">Summary of model architecture</p>
+            <img class="img-fluid mx-auto d-block" src="{{ url_for('static', filename = "img/13_model_summary.png") }}">
+            <p class="fs-2">Training history</p>
+            <img class="img-fluid mx-auto d-block" src="{{ url_for('static', filename = "img/13_learning_graphic.png") }}">
+            <div class="row pb-3 mt-4">
+                <div class="text-center">
+                    <a href="{{ url_for('main_controller.try13') }}">
+                        <button class="btn btn-primary fw-bold w-auto">Try it now!</button>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

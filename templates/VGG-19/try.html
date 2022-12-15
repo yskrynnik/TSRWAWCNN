@@ -1,0 +1,74 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="row justify-content-center py-3">
+        <div class="col-lg-6">
+            <div class="row">
+                <div class="fs-3 fw-bold text-center">
+                    VGG-19
+                </div>
+            </div>
+            {% if image is defined %}
+                <img class="img-fluid mx-auto d-block" src="data:image/png;base64,{{ image }}" alt="">
+            {% else %}
+                <form method="post" enctype="multipart/form-data">
+                    {{ form.csrf_token }}
+                    <div class="text-center">
+                        {% for error in form.image.errors %}
+                            <span class="text-danger fs-3 fw-bold">{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                    <div class="py-3">
+                        <div class="image-upload-wrap">
+                            {{ form.image(class="file-upload-input", onchange="readURL(this);", accept="image/*") }}
+                            <div class="drag-text">
+                                <h3>Drag and drop an Image</h3>
+                            </div>
+                        </div>
+                        <div class="file-upload-content">
+                            <img class="file-upload-image" src="#" alt="your image"/>
+                            <div class="image-title-wrap">
+                                <input type="button" id="remove-image" class="remove-image text-white"
+                                       value="Remove Uploaded Image"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        {{ form.submit(class="btn btn-primary fw-bold") }}
+                    </div>
+                </form>
+            {% endif %}
+        </div>
+    </div>
+    {% if text is defined %}
+        {% for a in text %}
+            <div class="row">
+                <div class="fs-3 fw-bold text-center">
+                    This is {{ a }}
+                </div>
+            </div>
+        {% endfor %}
+    {% endif %}
+    {% if plot is defined %}
+        <div class="row justify-content-center">
+            <div class="col-lg-6">
+                <img class="img-fluid mx-auto d-block" src="data:image/png;base64,{{ plot }}" alt="">
+            </div>
+        </div>
+    {% endif %}
+    {% if previews is defined %}
+        <div class="row justify-content-center pb-3">
+            <div class="col-lg-6">
+                <img class="img-fluid mx-auto d-block" src="data:image/png;base64,{{ previews }}" alt="">
+            </div>
+        </div>
+    {% endif %}
+    {% if text is defined %}
+        <div class="row pb-3">
+            <div class="text-center">
+                <a href="{{ url_for('main_controller.tryVGG19') }}">
+                    <button class="btn btn-primary fw-bold w-auto">Try again</button>
+                </a>
+            </div>
+        </div>
+    {% endif %}
+{% endblock %}

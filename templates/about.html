@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+{% block content %}
+    <div class="row justify-content-center py-3">
+        <div class="col-lg-6">
+            <p class="fs-2">Welcome to the TSRWAWCNN!</p>
+            <p class="">&emsp;&emsp; TSRWAWCNN is a Traffic Sign Recognition Web Application With Convolutional Neural
+                Network solution, which provides ability to try different neural networks and see detailed information
+                of recognition operations.
+                All neural networks were studied in 30 epochs using the GTRSB dataset.
+            </p>
+            <p class="fs-2">What is GTRSB?</p>
+            <p class="">&emsp;&emsp; The “German Traffic Sign Recognition Benchmark” is a multi-category classification
+                competition held at IJCNN 2011. Automatic recognition of traffic signs is required in advanced driver
+                assistance systems and constitutes a challenging real-world computer vision and pattern recognition
+                problem. A comprehensive, lifelike dataset of more than 50,000 traffic sign images has been collected.
+                It reflects the strong variations in visual appearance of signs due to distance, illumination, weather
+                conditions, partial occlusions, and rotations. The images are complemented by several precomputed
+                feature sets to allow for applying machine learning algorithms without background knowledge in image
+                processing.
+            </p>
+            <img class="img-fluid mx-auto d-block" src="{{ url_for('static', filename = "img/GTSRB_classes.png") }}"
+                 alt="">
+            Dataset has the following properties:
+            <ul>
+                <li>Single-image, multi-class classification problem</li>
+                <li>43 classes with unbalanced class frequencies</li>
+                <li>More than 50,000 images in total</li>
+                <li>Large, lifelike database</li>
+            </ul>
+            <p class="fs-4">Example of CNN work:</p>
+            <img class="img-fluid mx-auto d-block" src="{{ url_for('static', filename = "img/Example.png") }}">
+            <p class="fs-2">Available CNNs</p>
+            <p>
+            <div class="container">
+                <div class="row">
+                    <div class="col-4">
+                        <a class="text-decoration-none" href="{{ url_for('main_controller.about13') }}">
+                            <div class="card text-center bg-primary">
+                                <span class="fs-2 fw-bold text-light">13</span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-4">
+                        <a class="text-decoration-none" href="{{ url_for('main_controller.aboutVGG19') }}">
+                            <div class="card text-center bg-primary">
+                                <span class="fs-2 fw-bold text-light">VGG-19</span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-4">
+                        <a class="text-decoration-none" href="{{ url_for('main_controller.about_ln5') }}">
+                            <div class="card text-center bg-primary">
+                                <span class="fs-2 fw-bold text-light">LeNet-5</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            </p>
+        </div>
+    </div>
+{% endblock %}

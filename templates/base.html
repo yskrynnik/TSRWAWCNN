@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Title</title>
+    <link href="{{ url_for('static', filename='css/bootstrap.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/file-input.css') }}" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <script type="application/javascript" src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+    <script type="application/javascript" src="{{ url_for('static', filename='js/bootstrap.bundle.js') }}"></script>
+    <script type="application/javascript" src="{{ url_for('static', filename='js/file-input.js') }}"></script>
+</head>
+<body class="d-flex flex-column">
+    <header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary fs-6 fw-bold p-3">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="{{ url_for('main_controller.about') }}">TSRWAWCNN </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                           aria-expanded="false">
+                            13
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="{{ url_for('main_controller.about13') }}">About</a></li>
+                            <li><a class="dropdown-item" href="{{ url_for('main_controller.try13') }}">Try</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                           aria-expanded="false">
+                            VGG-19
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="{{ url_for('main_controller.aboutVGG19') }}">About</a></li>
+                            <li><a class="dropdown-item" href="{{ url_for('main_controller.tryVGG19') }}">Try</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                           aria-expanded="false">
+                            LeNet-5
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="{{ url_for('main_controller.about_ln5') }}">About</a></li>
+                            <li><a class="dropdown-item" href="{{ url_for('main_controller.try_ln5') }}">Try</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+    <main class="container-fluid flex-grow-1">
+        {% block content %}
+        {% endblock %}
+    </main>
+    <footer class="text-white text-center fs-6 fw-bold p-3" style="background-color: #ffd700">© 2022 - Skrynnyk Yehor </footer>
+</body>
+</html>

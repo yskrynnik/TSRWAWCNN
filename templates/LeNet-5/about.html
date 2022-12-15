@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block content %}
+    <div class="row justify-content-center py-3">
+        <div class="col-lg-6">
+            <p class="fs-2">What is LeNet-5</p>
+            <p class="">&emsp;&emsp; Yann LeCun, Leon Bottou, Yosuha Bengio and Patrick Haffner proposed a neural network architecture for handwritten and machine-printed character recognition in 1990’s which they called LeNet-5. The LeNet-5 architecture consists of two sets of convolutional and average pooling layers, followed by a flattening convolutional layer, then two fully-connected layers and finally a softmax classifier.
+            </p>
+             Neural network has the following properties:
+            <ul>
+                <li>7 layers</li>
+                <li>64,811 total params</li>
+                <li>64,811 trainable params</li>
+                <li>0 non-trainable params</li>
+                <li>Activation functions used: tanh, softmax</li>
+                <li>The proportion of correct answers on the test data - 89.04</li>
+            </ul>
+            <p class="fs-2">Visualized model</p>
+            <img class="img-fluid mx-auto d-block" src="{{ url_for('static', filename = "img/ln5_visualised_model.jpeg") }}">
+            <p class="fs-2">Summary of model architecture</p>
+            <img class="img-fluid mx-auto d-block" src="{{ url_for('static', filename = "img/ln5_model_summary.jpeg") }}">
+            <p class="fs-2">Training history</p>
+            <img class="img-fluid mx-auto d-block" src="{{ url_for('static', filename = "img/ln5_learning_graphic.png") }}">
+            <div class="row pb-3 mt-4">
+                <div class="text-center">
+                    <a href="{{ url_for('main_controller.try_ln5') }}">
+                        <button class="btn btn-primary fw-bold w-auto">Try it now!</button>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

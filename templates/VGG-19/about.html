@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block content %}
+     <div class="row justify-content-center py-3">
+        <div class="col-lg-6">
+            <p class="fs-2">What is VGG-19</p>
+            <p class="">&emsp;&emsp;VGG-19 is a convolutional neural network that is trained on more than a million images from the ImageNet database. The network is 19 layers deep and can classify images into 1000 object categories, such as a keyboard, mouse, pencil, and many animals. As a result, the network has learned rich feature representations for a wide range of images.
+            </p>
+             Neural network has the following properties:
+            <ul>
+                <li>19 layers</li>
+                <li>20,595,819 total params</li>
+                <li>20,594,795 trainable params</li>
+                <li>1,024 non-trainable params</li>
+                <li>Activation functions used: relu, softmax</li>
+                <li>The proportion of correct answers on the test data - 96.87</li>
+            </ul>
+            <p class="fs-2">Visualized model</p>
+            <img class="img-fluid mx-auto d-block" src="{{ url_for('static', filename = "img/VGG19_visualized_model.png") }}">
+            <p class="fs-2">Summary of model architecture</p>
+            <img class="img-fluid mx-auto d-block" src="{{ url_for('static', filename = "img/VGG19_model_summary.png") }}">
+            <p class="fs-2">Training history</p>
+            <img class="img-fluid mx-auto d-block" src="{{ url_for('static', filename = "img/VGG19_learning_graphic.png") }}">
+            <div class="row pb-3 mt-4">
+                <div class="text-center">
+                    <a href="{{ url_for('main_controller.try_ln5') }}">
+                        <button class="btn btn-primary fw-bold w-auto">Try it now!</button>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
